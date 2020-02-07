@@ -104,6 +104,7 @@ $ roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" dept
  8. 고정밀 3차원 실내지도 이기 때문에 많은 응용분야에 적용가능.
  9. 서버를 구동하여 3차원 실내지도를 사용자들에게 시각화서비스를 제공함.
  10. 건물 내부 네비게이션 서비스 뿐만아니라, 건물 → 건물 path finding 서비스 제공 중.
+ 11. 실제 실내 건물구조와 오차율은 0.1% 이내이다.
  
 ## Run
  ```sh
@@ -125,8 +126,26 @@ $ roslaunch hdl_graph_slam hdl_graph_slam_centrair.launch
 # run rosbag file
 $ rosbag play "(your bag file)"
 ``` 
+## Result
+ 1. 강남 코엑스의 대회장 일부분을 unanimous 프로젝트로 만든 실내지도이다. 
+<img src="unanimous_v2/mapping/images/coexB1.PNG" width="80%" height="80%">
+
+ 2. 1번을 자세히 확대한 사진이다.
+<img src="unanimous_v2/mapping/images/coexB1_up.PNG" width="80%" height="80%">
+
+ 3. 강남 코엑스의 바닥과 천장을 제거한 실내지도이다.
+ <img src="unanimous_v2/mapping/images/coexB1_wall.PNG" width="80%" height="80%">
+ 
+ 4. sw 인재페스티벌 대회에 참가하였을때 세종대학교의 광개토홀의 실내지도이다.
+ <img src="unanimous_v2/mapping/images/sju_hall.png" width="80%" height="80%">
+ 
+ 5. 현재 서버에서 사용자에게 제공하고있는 숭실대학교의 형남공학관 실내 3차원 지도이다.
+ <img src="unanimous_v2/mapping/images/ssu_hn_full.PNG" width="80%" height="80%">
+ 
  
 # Reference
+ ** 관련 기사나, 로봇에대한 자세한정보, 시연영상, 동작영상은 아래 링크를 참조하시면 됩니다.
+ 
  * https://www.youtube.com/watch?v=rWDjQ4hLrtE&t=14s
  * https://scatch.ssu.ac.kr/%eb%89%b4%ec%8a%a4%ec%84%bc%ed%84%b0/%ec%a3%bc%ec%9a%94%eb%89%b4%ec%8a%a4/page/3/?slug=20058-2&f&keyword
  * http://www.dhnews.co.kr/news/articleView.html?idxno=116170
