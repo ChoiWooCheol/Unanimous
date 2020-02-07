@@ -81,6 +81,8 @@ $ roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" dept
  
 # Unanimous v2
  * unanimous v1를 수정 보완한 프로젝트.
+ * raspberry pi4에 ROS를 포팅해야한다. (현재 우분투를 지원하지 않음)
+ * velodyne, turtlebot3의 추가 패키지가 필요하다.
  * 기존 pointcloud map을 만들때 realsense D435를 사용하였지만, v2에서는 velodyne VLP16 LiDAR를 사용함.
  * 하드웨어도 전부 새로 설계한 프로젝트이다.
 
@@ -92,12 +94,39 @@ $ roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" dept
  * Asus x560U laptop
 
 ## Explanation (요약)
- 1. 2륜 mobile robot을 이용하여 자율주행 시스템을 탑재한다.
- 2. 자율주행 시스템을 위한 slam알고리즘 구동을 위한 센서들을 부착한다.
- 3. 로봇에 장착된 realsense D435를 이용하여 point cloud map을 만든다.
- 4. 모든 센서와 로봇간의 TF정보를 설정하고, odometry를 이용하여 값을 보정한다.
- 5. 최종적으로 만들어진 point cloud map을 사용자들에게 제공하고, 경로안내 시스템을 구현한다.
+ 1. 기존 mobile robot의 모터의 회전힘의 부족으로 인한 문제점을 보완하기 위해 waffle사용.
+ 2. velodyne VLP16 LiDAR로 실내구조를 스캔하기위해 로봇플랫폼을 변경.
+ 3. ndt_mapping의 loopclosing 문제를 해결하기위해 graph based slam알고리즘으로 보정함.
+ 4. 반복적인 구조의 고층건물을 쉽게 스캔하기위해 구간별 2d map을 작성하고, 자율주행으로 맵을 스캔함.
+ 5. mapping 알고리즘이 고사양을 요구하기 때문에 rosbag을 이용하여 raspberry pi에 LiDAR data를 저장후 노트북으로 처리.
+ 6. 현재 숭실대학교 교정 pointcloud map과 몇몇의 건물의 pointcloud map을 합쳐서 제공중.
+ 7. 대회를 위한 강남 코엑스, 세종대 광개토홀의 실내지도도 서비스 가능.
+ 8. 고정밀 3차원 실내지도 이기 때문에 많은 응용분야에 적용가능.
+ 9. 서버를 구동하여 3차원 실내지도를 사용자들에게 시각화서비스를 제공함.
+ 10. 건물 내부 네비게이션 서비스 뿐만아니라, 건물 → 건물 path finding 서비스 제공 중.
+ 
+## Run
+ ```sh
+# make a 2d map for autonomous mobile system
+$ roslaunch total_launch 2dMapping.launch
 
+# run turtlebot waffle 
+$ roslaunch total_launch total_launch.launch
+
+# record pointcloud data topic
+$ rosbag record -o "(file name)" "(topic name)"
+
+# 3d mapping (you have to use rosbag data)
+$ roslaunch ndt_mapping ndt_mapping.launch
+
+# if your 3d map has loopclosing, run g2o.
+$ roslaunch hdl_graph_slam hdl_graph_slam_centrair.launch
+
+# run rosbag file
+$ rosbag play "(your bag file)"
+``` 
+ 
 # Reference
  * https://www.youtube.com/watch?v=rWDjQ4hLrtE&t=14s
  * https://scatch.ssu.ac.kr/%eb%89%b4%ec%8a%a4%ec%84%bc%ed%84%b0/%ec%a3%bc%ec%9a%94%eb%89%b4%ec%8a%a4/page/3/?slug=20058-2&f&keyword
+ * http://www.dhnews.co.kr/news/articleView.html?idxno=116170
