@@ -136,7 +136,7 @@ $ rosbag play "(your bag file)"
  3. 강남 코엑스의 바닥과 천장을 제거한 실내지도이다.
  <img src="unanimous_v2/mapping/images/coexB1_wall.PNG" width="80%" height="80%">
  
- 4. sw 인재페스티벌 대회에 참가하였을때 세종대학교의 광개토홀의 실내지도이다.
+ 4. sw 인재페스티벌 대회에 참가하였을때 세종대학교의 광개토홀의 3차원 실내지도이다. 입구부터 unanimous 부스까지 경로를 안내함.
  <img src="unanimous_v2/mapping/images/sju_hall.png" width="80%" height="80%">
  
  5. 현재 서버에서 사용자에게 제공하고있는 숭실대학교의 형남공학관 실내 3차원 지도이다.
