@@ -1,7 +1,7 @@
 # Unanimous
  * 숭실대학교 스마트시스템소프트웨어학과 재학생끼리 계획한 통합실내지도 솔루션을 제공하기위한 프로젝트 입니다.
 
-## Unanimous v1
+# Unanimous v1
  * unanimous 초기버전
  * rtabmap_ros, realsense_ros 패키지와 라이브러리가 추가로 필요하다.
  
@@ -80,8 +80,24 @@ $ roslaunch rtabmap_ros rtabmap.launch rtabmap_args:="--delete_db_on_start" dept
  <img src="unanimous_v1/images/ssu_hn_up.PNG" width="80%" height="80%">
  
 # Unanimous v2
-```sh
-$ roslaunch lidar_detect qt_detect_launch.launch --screen
-``` 
+ * unanimous v1를 수정 보완한 프로젝트.
+ * 기존 pointcloud map을 만들때 realsense D435를 사용하였지만, v2에서는 velodyne VLP16 LiDAR를 사용함.
+ * 하드웨어도 전부 새로 설계한 프로젝트이다.
+
+## Hardware
+ * raspberry pi 4
+ * turtlebot3 waffle
+ * 40800mAh AC 220V sub battery (2ea)
+ * Velodyne VLP 16channel LiDAR
+ * Asus x560U laptop
+
+## Explanation (요약)
+ 1. 2륜 mobile robot을 이용하여 자율주행 시스템을 탑재한다.
+ 2. 자율주행 시스템을 위한 slam알고리즘 구동을 위한 센서들을 부착한다.
+ 3. 로봇에 장착된 realsense D435를 이용하여 point cloud map을 만든다.
+ 4. 모든 센서와 로봇간의 TF정보를 설정하고, odometry를 이용하여 값을 보정한다.
+ 5. 최종적으로 만들어진 point cloud map을 사용자들에게 제공하고, 경로안내 시스템을 구현한다.
+
 # Reference
-https://www.youtube.com/watch?v=rWDjQ4hLrtE&t=14s
+ * https://www.youtube.com/watch?v=rWDjQ4hLrtE&t=14s
+ * https://scatch.ssu.ac.kr/%eb%89%b4%ec%8a%a4%ec%84%bc%ed%84%b0/%ec%a3%bc%ec%9a%94%eb%89%b4%ec%8a%a4/page/3/?slug=20058-2&f&keyword
