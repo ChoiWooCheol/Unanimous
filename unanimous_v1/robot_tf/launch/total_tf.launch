@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="tf" type="static_transform_publisher" name="robot2laser" args="0 0 0.18 0 0 0 laser base_link 100" />
+    <node pkg="robot_tf" type="map2robot" name="map2robot"/>
+    <node pkg="robot_tf" type="robot2odom" name="robot2odom"/>
+</launch>

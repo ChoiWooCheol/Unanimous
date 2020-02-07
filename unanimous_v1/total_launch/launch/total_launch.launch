@@ -1,0 +1,7 @@
+<launch>
+    <include file="$(find robot_tf)/launch/total_tf.launch"/>
+    <include file="$(find unanimous)/launch/mapping.launch"/>
+    <include file="$(find self_driving)/launch/unanimous_localization.launch"/>
+    <node pkg="self_driving" type="motor" name="motor"/>
+    <node pkg="self_driving" type="trans_velocity" name="trans_velocity"/>
+</launch>
