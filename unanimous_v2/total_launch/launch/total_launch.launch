@@ -1,0 +1,5 @@
+<launch>
+    <include file="$(find turtlebot3_bringup)/launch/turtlebot3_robot.launch"/>
+    <include file="$(find turtlebot3_navigation)/launch/amcl.launch"/>
+    <include file="$(find turtlebot3_navigation)/launch/move_base.launch"/>
+</launch>
