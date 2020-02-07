@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="unanimous" type="signal_to_makingMap" name="signal_to_makingMap"/>
+    <node pkg="map_server" type="map_saver" name="map_saver" args="-f /home/choi/exam/unanimous_map" output="screen"/>
+</launch>
+
+<!-- rosrun map_server map_saver -f playground -->

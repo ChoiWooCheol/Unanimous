@@ -1,0 +1,10 @@
+<launch>
+    <include file="$(find rplidar_ros)/launch/rplidar.launch"/>
+    <include file="$(find hector_slam_launch)/launch/tutorial.launch"/>
+
+    
+    <node pkg="unanimous" type="get_point_cloud" name="get_point_cloud" output="screen">
+        <param name="sampling_number" value="1000"/>
+        <param name="path" value="/home/choi/exam/point_data.txt"/>
+    </node>
+</launch>
