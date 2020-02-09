@@ -62,7 +62,7 @@ $ sudo make install
 $ cd ../src
 $ git clone https://github.com/introlab/rtabmap_ros.git
 
-# installation realsense2 D435 firmware
+# installation realsense2 D435 firmware(web site)
 https://dev.intelrealsense.com/docs/firmware-update-tool?_ga=2.88126104.203762601.1566118510-1030599472.1566118510
 
 # launch mapping
