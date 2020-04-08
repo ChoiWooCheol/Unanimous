@@ -8,7 +8,7 @@
 ## Hardware
  * raspberry pi 4
  * turtle - 2wd mobile platform
- * Li-op battery
+ * Li-po battery
  * realsense D435
  * rplidar a1
  
