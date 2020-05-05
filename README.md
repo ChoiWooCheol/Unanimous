@@ -18,6 +18,7 @@
  3. 로봇에 장착된 realsense D435를 이용하여 point cloud map을 만든다.
  4. 모든 센서와 로봇간의 TF정보를 설정하고, odometry를 이용하여 값을 보정한다.
  5. 최종적으로 만들어진 point cloud map을 사용자들에게 제공하고, 경로안내 시스템을 구현한다.
+ 6. 숭실대학교 몇개의 건물들의 실내구조를 RGB-D 속성의 point cloud map으로 만들어서 서비스
  
 ## Run
  * 자율주행을 위한 런치파일이다.
