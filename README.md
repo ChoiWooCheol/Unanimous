@@ -143,6 +143,8 @@ $ rosbag play "(your bag file)"
  5. 현재 서버에서 사용자에게 제공하고있는 숭실대학교의 형남공학관 실내 3차원 지도이다.
  <img src="unanimous_v2/mapping/images/ssu_hn_full.PNG" width="80%" height="80%">
  
+ 6. 실제 숭실대학교 형남공학관 사진
+ <img src="unanimous_v1/images/ssu_hnE.jpg" width="80%" height="80%">
  
 # Reference
  ** 관련 기사나, 로봇에대한 자세한정보, 시연영상, 동작영상은 아래 링크를 참조하시면 됩니다.
