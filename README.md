@@ -152,3 +152,4 @@ $ rosbag play "(your bag file)"
  * https://www.youtube.com/watch?v=rWDjQ4hLrtE&t=14s
  * https://scatch.ssu.ac.kr/%eb%89%b4%ec%8a%a4%ec%84%bc%ed%84%b0/%ec%a3%bc%ec%9a%94%eb%89%b4%ec%8a%a4/page/3/?slug=20058-2&f&keyword
  * http://www.dhnews.co.kr/news/articleView.html?idxno=116170
+ * http://ibook.ssu.ac.kr/Viewer/Q9ZQBTSP2694 (6
